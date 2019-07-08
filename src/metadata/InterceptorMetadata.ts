@@ -1,49 +1,47 @@
-import {UseInterceptorMetadataArgs} from "./args/UseInterceptorMetadataArgs";
+import {UseInterceptorMetadataArgs} from './args/UseInterceptorMetadataArgs';
 
 /**
  * "Use interceptor" metadata.
  */
 export class InterceptorMetadata {
+  /**
+   * Indicates if this interceptor is global or not.
+   */
+  public global: boolean;
 
-    // -------------------------------------------------------------------------
-    // Properties
-    // -------------------------------------------------------------------------
+  /**
+   * Interceptor class or function to be executed by this "use".
+   */
+  public interceptor: Function;
 
-    /**
-     * Object class of the interceptor class.
-     */
-    target: Function;
+  /**
+   * Method used by this "use".
+   */
+  public method: string;
 
-    /**
-     * Method used by this "use".
-     */
-    method: string;
+  /**
+   * Interceptor priority. Used for global interceptors.
+   */
+  public priority: number;
 
-    /**
-     * Interceptor class or function to be executed by this "use".
-     */
-    interceptor: Function;
+  // -------------------------------------------------------------------------
+  // Properties
+  // -------------------------------------------------------------------------
 
-    /**
-     * Indicates if this interceptor is global or not.
-     */
-    global: boolean;
+  /**
+   * Object class of the interceptor class.
+   */
+  public target: Function;
 
-    /**
-     * Interceptor priority. Used for global interceptors.
-     */
-    priority: number;
+  // -------------------------------------------------------------------------
+  // Constructor
+  // -------------------------------------------------------------------------
 
-    // -------------------------------------------------------------------------
-    // Constructor
-    // -------------------------------------------------------------------------
-    
-    constructor(args: UseInterceptorMetadataArgs) {
-        this.target = args.target;
-        this.method = args.method;
-        this.interceptor = args.interceptor;
-        this.priority = args.priority;
-        this.global = args.global;
-    }
-    
+  constructor(args: UseInterceptorMetadataArgs) {
+    this.target = args.target;
+    this.method = args.method;
+    this.interceptor = args.interceptor;
+    this.priority = args.priority;
+    this.global = args.global;
+  }
 }

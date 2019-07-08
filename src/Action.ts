@@ -2,26 +2,24 @@
  * Controller action properties.
  */
 export interface Action {
+  /**
+   * Content in which action is executed.
+   * Koa-specific property.
+   */
+  context?: any;
 
-    /**
-     * Action Request object.
-     */
-    request: any;
+  /**
+   * "Next" function used to call next middleware.
+   */
+  next?: Function;
 
-    /**
-     * Action Response object.
-     */
-    response: any;
+  /**
+   * Action Request object.
+   */
+  request: any;
 
-    /**
-     * Content in which action is executed.
-     * Koa-specific property.
-     */
-    context?: any;
-
-    /**
-     * "Next" function used to call next middleware.
-     */
-    next?: Function;
-
+  /**
+   * Action Response object.
+   */
+  response: any;
 }

@@ -1,5 +1,14 @@
 # Changelog and release notes
 
+### 0.8.0 [BREAKING CHANGES]
+
+#### Features
+
+- extract generic `@Session()` deocorator into `@SessionParam()` and `@Session()`
+- restore/introduce `@QueryParams()` and `@Params()` missing decorators options (ref [#289][#289])
+- normalize param object properties (for "queries", "headers", "params" and "cookies"), with this change you can easily validate query/path params using `class-validator` (ref [#289][#289])
+- improved params normalization, converting to primitive types is now more strict and can throw ParamNormalizationError (e.g. when number is expected but an invalid string (NaN) has been received) (ref [#289][#289])
+
 ### 0.7.8
 
 #### Features

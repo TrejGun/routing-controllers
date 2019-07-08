@@ -1,44 +1,42 @@
 export class FakeService {
+  public fileMiddlewareCalled = false;
+  public postMiddlewareCalled = false;
+  public questionErrorMiddlewareCalled = false;
+  public questionMiddlewareCalled = false;
+  public videoMiddlewareCalled = false;
 
-    fileMiddlewareCalled = false;
-    videoMiddlewareCalled = false;
-    questionMiddlewareCalled = false;
-    questionErrorMiddlewareCalled = false;
-    postMiddlewareCalled = false;
+  public fileMiddleware() {
+    this.fileMiddlewareCalled = true;
+    console.log('fake service!');
+  }
 
-    fileMiddleware() {
-        this.fileMiddlewareCalled = true;
-        console.log("fake service!");
-    }
+  public postMiddleware() {
+    this.postMiddlewareCalled = true;
+    console.log('fake service!');
+  }
 
-    videoMiddleware() {
-        this.videoMiddlewareCalled = true;
-        console.log("fake service!");
-    }
+  public questionErrorMiddleware() {
+    this.questionErrorMiddlewareCalled = true;
+    console.log('fake service!');
+  }
 
-    questionMiddleware() {
-        this.questionMiddlewareCalled = true;
-        console.log("fake service!");
-    }
+  public questionMiddleware() {
+    this.questionMiddlewareCalled = true;
+    console.log('fake service!');
+  }
 
-    questionErrorMiddleware() {
-        this.questionErrorMiddlewareCalled = true;
-        console.log("fake service!");
-    }
+  public reset() {
+    this.fileMiddlewareCalled = false;
+    this.videoMiddlewareCalled = false;
+    this.questionMiddlewareCalled = false;
+    this.questionErrorMiddlewareCalled = false;
+    this.postMiddlewareCalled = false;
+  }
 
-    postMiddleware() {
-        this.postMiddlewareCalled = true;
-        console.log("fake service!");
-    }
-
-    reset() {
-        this.fileMiddlewareCalled = false;
-        this.videoMiddlewareCalled = false;
-        this.questionMiddlewareCalled = false;
-        this.questionErrorMiddlewareCalled = false;
-        this.postMiddlewareCalled = false;
-    }
-
+  public videoMiddleware() {
+    this.videoMiddlewareCalled = true;
+    console.log('fake service!');
+  }
 }
 
 export const defaultFakeService = new FakeService();

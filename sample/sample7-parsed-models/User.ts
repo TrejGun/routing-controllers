@@ -1,16 +1,14 @@
-import {Photo} from "./Photo";
-import {Exclude, Type} from "class-transformer";
+import {Photo} from './Photo';
+import {Exclude, Type} from 'class-transformer';
 
 export class User {
-    
-    id: number;
-    
-    name: string;
+  public id: number;
 
-    @Exclude()
-    password: string;
-    
-    @Type(() => Photo)
-    photo: Photo;
-    
+  public name: string;
+
+  @Exclude()
+  public password: string;
+
+  @Type(() => Photo)
+  public photo: Photo;
 }

@@ -1,43 +1,41 @@
-import {UseMetadataArgs} from "./args/UseMetadataArgs";
+import {UseMetadataArgs} from './args/UseMetadataArgs';
 
 /**
  * "Use middleware" metadata.
  */
 export class UseMetadata {
+  /**
+   * Indicates if middleware must be executed after routing action is executed.
+   */
+  public afterAction: boolean;
 
-    // -------------------------------------------------------------------------
-    // Properties
-    // -------------------------------------------------------------------------
+  /**
+   * Method used by this "use".
+   */
+  public method: string;
 
-    /**
-     * Object class of the middleware class.
-     */
-    target: Function;
+  /**
+   * Middleware to be executed by this "use".
+   */
+  public middleware: Function;
 
-    /**
-     * Method used by this "use".
-     */
-    method: string;
+  // -------------------------------------------------------------------------
+  // Properties
+  // -------------------------------------------------------------------------
 
-    /**
-     * Middleware to be executed by this "use".
-     */
-    middleware: Function;
+  /**
+   * Object class of the middleware class.
+   */
+  public target: Function;
 
-    /**
-     * Indicates if middleware must be executed after routing action is executed.
-     */
-    afterAction: boolean;
+  // -------------------------------------------------------------------------
+  // Constructor
+  // -------------------------------------------------------------------------
 
-    // -------------------------------------------------------------------------
-    // Constructor
-    // -------------------------------------------------------------------------
-    
-    constructor(args: UseMetadataArgs) {
-        this.target = args.target;
-        this.method = args.method;
-        this.middleware = args.middleware;
-        this.afterAction = args.afterAction;
-    }
-    
+  constructor(args: UseMetadataArgs) {
+    this.target = args.target;
+    this.method = args.method;
+    this.middleware = args.middleware;
+    this.afterAction = args.afterAction;
+  }
 }
