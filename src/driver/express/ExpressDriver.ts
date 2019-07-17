@@ -220,7 +220,6 @@ export class ExpressDriver extends BaseDriver {
       } else {
         options.response.send(result);
       }
-      options.next();
     }
   }
 
